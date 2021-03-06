@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Evaluate News Article with NLP</title>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <form onsubmit="Client.handleSubmit(event)">
+          <input
+            class="form-input"
+            id="url-input"
+            type="text"
+            name="input"
+            placeholder="Enter a URL to an article to evaluate it"
+            autocomplete="off"
+            required
+          />
+          <div class="error">Please enter a valid URL to an article</div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section id="results">
+        <p>Subjectivity : <span id="subjectivity"></span></p>
+        <p>Score Tag : <span id="score_tag"></span></p>
+        <p>Model : <span id="model"></span></p>
+        <p>Irony : <span id="irony"></span></p>
+        <p>Confidence : <span id="confidence"></span></p>
+        <p>Agreement : <span id="agreement"></span></p>
+      </section>
+    </main>
+
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>

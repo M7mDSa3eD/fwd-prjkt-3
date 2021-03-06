@@ -1,0 +1,82 @@
+form {
+  *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    border-radius: $borderRaduis;
+    font-size: 1rem;
+    background-color: #eeeeee;
+    transition: background $transitionTime ease;
+    border: 1px solid transparent;
+
+    outline: transparent;
+    &:hover,
+    &:focus {
+      background-color: #e7e7e7;
+    }
+
+    &.form-input {
+      & + .error {
+        display: none;
+      }
+
+      &.has-error {
+        border: 1px solid red;
+        &::after {
+          content: " - Remember this";
+          background-color: yellow;
+          color: red;
+          font-weight: bold;
+        }
+        & + .error {
+          display: block;
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    border-radius: $borderRaduis;
+    font-size: 1rem;
+    background: #7d3f3fc7;
+    color: #fff;
+    border: none;
+    transition: background $transitionTime ease;
+    outline: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: #7d3f3f;
+    }
+  }
+
+  &.loading {
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+    &::after {
+      content: "Loading";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #00000080;
+      margin: -1.5rem;
+      border-radius: $borderRaduis;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      text-transform: uppercase;
+      font-family: monospace;
+    }
+  }
+}

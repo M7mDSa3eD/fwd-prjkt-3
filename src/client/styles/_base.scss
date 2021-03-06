@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$borderRaduis: 0.5rem;
+$transitionTime: 0.2s;
+$spacing: 1.5rem;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  min-height: 100vh;
+  background: #dff3ff;
+  font-family: "Roboto", sans-serif;
+  padding: $spacing;
+}
+
+main {
+  section {
+    background-color: #fff;
+    padding: 1.5rem;
+    max-width: 800px;
+    border-radius: $borderRaduis;
+    box-shadow: 0 1rem 5rem 0 #00000050;
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  #results {
+    display: none;
+
+    p {
+      padding: 0.5rem 0.75rem;
+      background-color: #7d3f3fc7;
+      color: #fff;
+      &:not(:last-child) {
+        margin-bottom: 0.125rem;
+      }
+
+      &:first-child {
+        border-radius: $borderRaduis $borderRaduis 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $borderRaduis $borderRaduis;
+      }
+
+      font-weight: bolder;
+
+      span {
+        font-weight: lighter;
+        color: #ffffffc7;
+      }
+    }
+
+    &.has-results {
+      display: block;
+    }
+  }
+}
