@@ -1,10 +1,12 @@
+import { isURL } from "./isURL";
+
 function handleSubmit(event) {
   event.preventDefault();
 
   const input = document.querySelector("#url-input");
   const URL = input.value;
 
-  if (Client.isURL(URL)) {
+  if (isURL(URL)) {
     event.target.classList.add("loading");
     input.classList.remove("has-error");
 
