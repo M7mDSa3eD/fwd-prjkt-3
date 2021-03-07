@@ -32,11 +32,18 @@ function handleSubmit(event) {
           document.querySelector("#results").classList.add("has-results");
         }
       })
+      .catch((error) => {
+        input.classList.add("has-error");
+        document.querySelector("#url-input.has-error + .error").innerText =
+          "Request Error";
+      })
       .finally(() => {
         event.target.classList.remove("loading");
       });
   } else {
     input.classList.add("has-error");
+    document.querySelector("#url-input.has-error + .error").innerText =
+      "Please enter a valid URL to an article";
   }
 }
 
