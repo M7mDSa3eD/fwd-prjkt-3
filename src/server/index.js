@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 // Create App instance
 const app = express();
 app.use(express.json());
+app.use(require("cors")());
 
 // Point to static dir
 app.use(express.static("dist"));
